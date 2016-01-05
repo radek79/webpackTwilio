@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
  
 class World extends React.Component {
   render() {
@@ -6,8 +7,25 @@ class World extends React.Component {
   }
 }
 
+var ChildComponent = React.createClass({
+  render : function() {
+    return <div style={{
+      color      : this.props.color,
+      background : this.props.background
+    }}>
+      I am {this.props.color}
+    </div>
+  }
+});
+  
+var ParentComponent = React.createClass({
+  render : function() {
+    return <ChildComponent color="blue" background="grey" />
+  }
+});
+
 var data = {
 	city : "Chicago from a json packet"
 };
 
-React.render(<World data={data} />, document.getElementById('world'));
+ReactDOM.render(<ParentComponent color="blue" background="red" />, document.getElementById('world'));
