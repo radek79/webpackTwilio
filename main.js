@@ -11,4 +11,4 @@ var data = [
   {id: 2, author: "Jordan Walke", text: "This is *another* comment"}
 ];
 
-ReactDOM.render(<CBox data={data} />, document.getElementById('world')); /* you have to reference what you got out of require here*/
+ReactDOM.render(<CBox url="commentsdata.json" pollInterval={8000} />, document.getElementById('world')); /* you have to reference what you got out of require here*/
