@@ -3,6 +3,12 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-var Cbox = require('./commentbox.jsx') /* name has to start with a capital letter*/
+var CBox = require('./commentbox.jsx') /* name has to start with a capital letter*/
 
-ReactDOM.render(<Cbox />, document.getElementById('world')); /* you have to reference what you got out of require here*/
+/*this should come from the backend*/
+var data = [
+  {id: 1, author: "Pete Hunt", text: "This is one comment"},
+  {id: 2, author: "Jordan Walke", text: "This is *another* comment"}
+];
+
+ReactDOM.render(<CBox data={data} />, document.getElementById('world')); /* you have to reference what you got out of require here*/
